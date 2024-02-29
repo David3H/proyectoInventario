@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="graficos.js">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <title>Reporte Inventario Tecpro</title>
+</head>
+<body>
+    <main>
+        <section>
+           <!-- Barra Lateral -->
+           <nav class="sidebar">
+            <br>
+            <br>
+            <br>
+            <ul>
+                <li><a href="./principal.html">Inicio</a></li>
+                <li class="submenu">
+                    <a>Matriz</a>
+                    <ul>
+                        <li><a href="./inventarioMatriz.html">Inventario</a></li>
+                        <li><a href="./reporteInveMatriz.html">Reporte</a></li>
+                    </ul>
+                </li>
+                <li class="submenu">
+                    <a>Bodega 2</a>
+                    <ul>
+                        <li><a href="./inventarioBodega.html">Inventario</a></li>
+                        <li><a href="./reporteInveBodega.html">Reporte</a></li>
+                    </ul>
+                </li>
+                <li class="submenu">
+                    <a>Tecpro</a>
+                    <ul>
+                        <li><a href="./inventarioTecpro.html">Inventario</a></li>
+                        <li><a href="./reporteInveTecpro.html">Reporte</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <p>Versión 1.0</p>
+        </nav>
+        </section>
+        <section>
+                <!-- Barra de Navegación -->
+                <div class="navbar">
+                    <h2>Tecpro</h2>
+                </div>
+        </section>
+        <section>
+            <div class="content">
+                <div class="titulo">
+                    <p>Reporte Stock</p>
+                </div>
+                <div class="areaBoton">
+                    <button class="botonRepT" id="btnResumenTecpro">Generar reporte</button>
+                </div>
+                <div id="loading-message">
+                    <div class="contenedor-loader">
+                        <div class="rueda"></div>
+                    </div>
+                     <div>Cargando...</div>
+                </div>
+                <table id="tablaTecpro">
+                    <thead>
+                        <tr>
+                            <th>Familia de Conteo</th>
+                            <th>Total Familia</th>
+                            <th>Contado</th>
+                            <th>Cuadra</th>
+                            <th>%. Contado</th>
+                            <th>%. Cuadra</th>
+                        </tr>
+                    </thead>
+                    <tbody id="reporteTecpro">
+                        <!-- Aquí se llenarán los datos -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+        <section>
+            <div class="content2">
+                <canvas id="graficoT" width="500" height="150"></canvas>
+            </div>
+        </section>
+    </main>
+     <!-- Incluir el archivo JavaScript externo -->
+     <script src="clienteReporte.js"></script>
+</body>
+</html>

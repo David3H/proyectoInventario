@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js" integrity="sha512-r22gChDnGvBylk90+2e/ycr3RVrDi8DIOkIGNhJlKfuyQM4tIRAI062MaV8sfjQKYVGjOBaZBOA87z+IhZE9DA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://kit.fontawesome.com/2e06dcf08c.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/luxon@2.0.0/build/global/luxon.min.js"></script>
+    <title>Inventario Tecpro</title>
+</head>
+<body>
+    <main>
+        <section>
+           <!-- Barra Lateral -->
+           <nav class="sidebar">
+            <br>
+            <br>
+            <br>
+            <ul>
+                <li><a href="./principal.html">Inicio</a></li>
+                <li class="submenu">
+                    <a>Matriz</a>
+                    <ul>
+                        <li><a href="./inventarioMatriz.html">Inventario</a></li>
+                        <li><a href="./reporteInveMatriz.html">Reporte</a></li>
+                    </ul>
+                </li>
+                <li class="submenu">
+                    <a>Bodega 2</a>
+                    <ul>
+                        <li><a href="./inventarioBodega.html">Inventario</a></li>
+                        <li><a href="./reporteInveBodega.html">Reporte</a></li>
+                    </ul>
+                </li>
+                <li class="submenu">
+                    <a>Tecpro</a>
+                    <ul>
+                        <li><a href="./inventarioTecpro.html">Inventario</a></li>
+                        <li><a href="./reporteInveTecpro.html">Reporte</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <p>Versión 1.0</p>
+        </nav>
+        </section>
+        <section>
+                <!-- Barra de Navegación -->
+                <div class="navbar">
+                    <h2>Inventario Tecpro</h2>
+                </div>
+        </section>
+        <section>
+            <div class="content">
+                <div class="titulo">
+                    <p>Cuadro Detalle Stock Tecpro</p>
+                </div>
+                <div class="selector">
+                    <div class="opciones ">
+                        <label>Filtrar por:</label>
+                        <select id="filtroCuadra" class="filtroCuadra">
+                            <option default>Seleccionar</option>
+                            <option value="0">Datos que no cuadran</option>
+                            <option value="1">Datos que cuadran</option>
+                            <option value="2">Todos</option>
+                        </select>
+                    </div>
+                    <!--<div class="opcionesOrdenar">
+                        <label>Ordenado:</label>
+                        <select id="ordenarTipo" class="filtroCuadra">
+                            <option default>Seleccionar</option>
+                            <option value="0">Mayor a menor</option>
+                            <option value="1">Menor a mayor</option>
+                        </select>
+                    </div>-->
+                    <div class="areaBoton">
+                        <button class="boton" id="btnDatosTecpro"><i class="fa-solid fa-magnifying-glass"></i></button>
+                    </div>
+                    <div class="archivoExcel">
+                        <label>Generar Excel:</label>
+                        <button id="btnExportarExcelTecpro"><i class="fa-solid fa-file-excel"></i></button>
+                    </div>
+                </div>
+                <div id="loading-message">
+                    <div class="contenedor-loader">
+                        <div class="rueda"></div>
+                    </div>
+                     <div>Cargando...</div>
+                </div>
+                <table id="tablaTecpro">
+                    <thead>
+                        <tr>
+                            <th class="ocultar">Grupo Conteo</th>
+                            <th>Artículo</th>
+                            <th>Original</th>
+                            <th>Descripción</th>
+                            <th>Marca</th>
+                            <th>Cantidad Contada</th>
+                            <th>Cantidad GP</th>
+                            <th>Cantidad WMS</th>
+                            <th>Diferencia</th>
+                            <th class="ocultar">Cant Reclamo</th>
+                            <th>Observación 1</th>
+                            <th class="ocultar">Observación2</th>
+                            <th class="ocultar">Costo Promedio</th>
+                            <th class="ocultar">Total Error</th>
+                            <th class="ocultar">Nota</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tablaDatosTecpro">
+                         <!-- Aquí se llenarán los datos -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+    <!-- Incluir el archivo JavaScript externo -->
+    <script src="cliente.js"></script>
+</body>
+</html>

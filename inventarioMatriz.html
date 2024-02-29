@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js" integrity="sha512-r22gChDnGvBylk90+2e/ycr3RVrDi8DIOkIGNhJlKfuyQM4tIRAI062MaV8sfjQKYVGjOBaZBOA87z+IhZE9DA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://kit.fontawesome.com/2e06dcf08c.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/luxon@2.0.0/build/global/luxon.min.js"></script>
+    <title>Inventario</title>
+</head>
+<body>
+    <main>
+        <section>
+           <!-- Barra Lateral -->
+           <nav class="sidebar">
+            <ul>
+                <li><a href="./principal.html">Inicio</a></li>
+                <li class="estiloM" onclick="toggleSubmenu('submenu1')">
+                    <span class="indicator" id="indicator-submenu1"><i class="fa-solid fa-angle-right"></i></span> Matriz
+                </li>
+                <ul class="submenu" id="submenu1">
+                    <li class="men2"><a href="./inventarioMatriz.html">Inventario</a></li>
+                    <li class="men2"><a href="./reporteInveMatriz.html">Reporte</a></li>
+                </ul>
+                <li class="estiloM" onclick="toggleSubmenu('submenu2')">
+                    <span class="indicator" id="indicator-submenu2"><i class="fa-solid fa-angle-right"></i></span> Bodega 2
+                </li>
+                <ul class="submenu" id="submenu2">
+                    <li class="men2"><a href="./inventarioBodega.html">Inventario</a></li>
+                    <li class="men2"><a href="./reporteInveBodega.html">Reporte</a></li>
+                </ul>
+                <li class="estiloM" onclick="toggleSubmenu('submenu3')">
+                    <span class="indicator" id="indicator-submenu3"><i class="fa-solid fa-angle-right"></i></span> Tecpro</li>
+                <ul class="submenu" id="submenu3">
+                    <li class="men2"><a href="./inventarioTecpro.html">Inventario</a></li>
+                    <li class="men2"><a href="./reporteInveTecpro.html">Reporte</a></li>
+                </ul>
+            </ul>
+            <p>Versión: <span id="version"></span></p>
+        </nav>
+        </section>
+        <section>
+                <!-- Barra de Navegación -->
+                <div class="navbar">
+                    <h2>Rectima Matriz</h2>
+                </div>
+        </section>
+        <section>
+            <div class="content">
+                <div class="titulo">
+                    <p>Cuadro Detalle Inventario Stock Matriz</p>
+                </div>
+                <div class="selector">
+                    <div class="opciones ">
+                        <label>Filtrar por:</label>
+                        <select id="filtroCuadra" class="filtroCuadra">
+                            <option default>Seleccionar</option>
+                            <option value="0">Datos que no cuadran</option>
+                            <option value="1">Datos que cuadran</option>
+                            <option value="2">Todos</option>
+                        </select> 
+                    </div>
+                    <!--<div class="opcionesOrdenar">
+                        <label>Ordenado:</label>
+                        <select id="ordenarTipo" class="filtroCuadra">
+                            <option default>Seleccionar</option>
+                            <option value="0">Mayor a menor</option>
+                            <option value="1">Menor a mayor</option>
+                        </select>
+                    </div>-->
+                    <div class="areaBoton">
+                        <button class="boton" id="btnDatosMatriz"><i class="fa-solid fa-magnifying-glass"></i></button>
+                    </div>
+                    <div class="archivoExcel">
+                        <label>Generar Excel:</label>
+                        <button id="btnExportarExcelMatriz"><i class="fa-solid fa-file-excel"></i></button>
+                    </div>
+                </div>
+                <div id="loading-message">
+                    <div class="contenedor-loader">
+                        <div class="rueda"></div>
+                    </div>
+                     <div>Cargando...</div>
+                </div>
+                <table id="tablaMatriz">
+                    <thead>
+                        <tr>
+                            <th>Grupo</th>
+                            <th>Artículo</th>
+                            <th>Original</th>
+                            <th>Descripción</th>
+                            <th>Marca</th>
+                            <th>Cantidad Contada</th>
+                            <th>Cantidad GP</th>
+                            <th>Cantidad WMS</th>
+                            <th>Diferencia</th>
+                            <th class="ocultar">Cant Reclamo</th>
+                            <th>Observación 1</th>
+                            <th class="ocultar">Observación2</th>
+                            <th class="ocultar">Costo Promedio</th>
+                            <th class="ocultar">Total Error</th>
+                            <th class="ocultar">Nota</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tablaDatosMatriz">
+                         <!-- Aquí se llenarán los datos -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+    <!-- Incluir el archivo JavaScript externo -->
+    <script src="cliente.js"></script>
+    <script src="version.js"></script>
+</body>
+</html>

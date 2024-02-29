@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://kit.fontawesome.com/2e06dcf08c.js" crossorigin="anonymous"></script>
+    <title>Inicio</title>
+</head>
+
+<body>
+    <main>
+        <section>
+            <!-- Barra Lateral -->
+            <nav class="sidebar">
+                <ul>
+                    <li><a href="./principal.html">Inicio</a></li>
+                    <li class="estiloM" onclick="toggleSubmenu('submenu1')">
+                        <span class="indicator" id="indicator-submenu1"><i class="fa-solid fa-angle-right"></i></span> Matriz
+                    </li>
+                    <ul class="submenu" id="submenu1">
+                        <li class="men2"><a href="./inventarioMatriz.html">Inventario</a></li>
+                        <li class="men2"><a href="./reporteInveMatriz.html">Reporte</a></li>
+                    </ul>
+                    <li class="estiloM" onclick="toggleSubmenu('submenu2')">
+                        <span class="indicator" id="indicator-submenu2"><i class="fa-solid fa-angle-right"></i></span> Bodega 2
+                    </li>
+                    <ul class="submenu" id="submenu2">
+                        <li class="men2"><a href="./inventarioBodega.html">Inventario</a></li>
+                        <li class="men2"><a href="./reporteInveBodega.html">Reporte</a></li>
+                    </ul>
+                    <li class="estiloM" onclick="toggleSubmenu('submenu3')">
+                        <span class="indicator" id="indicator-submenu3"><i class="fa-solid fa-angle-right"></i></span> Tecpro</li>
+                    <ul class="submenu" id="submenu3">
+                        <li class="men2"><a href="./inventarioTecpro.html">Inventario</a></li>
+                        <li class="men2"><a href="./reporteInveTecpro.html">Reporte</a></li>
+                    </ul>
+                </ul>
+                <p>Versión: <span id="version"></span></p>
+            </nav>
+        </section>
+        <section>
+            <!-- Barra de Navegación -->
+            <div class="navbar">
+                <h2>Inventario General</h2>
+            </div>
+        </section>
+    </main>
+    <script src="version.js"></script>
+</body>
+
+</html>

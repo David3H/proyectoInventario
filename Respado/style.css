@@ -1,0 +1,256 @@
+@import url('//fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,900&display=swap');
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Barra Lateral (Sidebar) */
+
+.sidebar {
+    height: 100%;
+    width: 250px;
+    position: fixed;
+    background-color: #2f436d;
+    padding-top: 20px;
+    color: white;
+    top: 0;
+    left: 0;
+    overflow-x: hidden;
+    text-align: center;
+    z-index: 1;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar a {
+    text-decoration: none;
+    color: white;
+    padding: 15px 20px;
+    font-size: 20px;text-align: start;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidebar a:hover {
+    background-color: #2f436d;
+}
+
+.submenu ul {
+    display: none;
+    padding: 0;
+    margin: 0;
+}
+
+.submenu:hover > ul {
+    display: block;
+}
+
+.submenu ul li {
+    background-color: #2f436d;
+    padding-left: 20px;
+}
+
+.submenu ul li a {
+    padding: 10px 20px;
+    display: block;
+}
+
+.sidebar p{
+    position: absolute;
+    bottom: 1.2rem;
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+    background-color: #555;
+    margin: 0;
+}
+.sidebar a:hover {
+    background-color: #879efa;
+}
+
+/* Barra de Navegación (Navbar) */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #2f436d;
+    overflow: hidden;
+    z-index: 2;
+}
+.navbar h2{
+    text-align: center;
+    color: white;
+}
+.navbar a {
+    float: left;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.navbar a:hover {
+    background-color: #ddd;
+    color: rgb(46, 43, 43);
+}
+
+/* Contenido Principal */
+.content {
+    margin-left: 250px; 
+    padding: 16px;
+}
+
+.content2 {
+    margin-left: 250px; 
+    padding: 16px;
+}
+
+/*Estilos de tabla*/
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.titulo p{
+text-align: center;
+font-weight: bold;
+font-size: 1.3rem;
+margin-top: 5rem;
+}
+th, td {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+canvas {
+    width: 50%;
+    height: auto;
+}
+/*Estilos para el selecto y boton del stock inventario*/
+.selector{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 1.5rem;
+}
+.opciones{
+    margin-top: 0.2rem;
+    font-size: 1.2rem;
+}
+.opcionesOrdenar{
+    margin-left: 0.5rem;
+    margin-top: 0.5rem;
+    font-size: 1.2rem;
+}
+.opciones label{
+    font-weight: bold;
+}
+.opcionesOrdenar label{
+    font-weight: bold;
+}
+.boton{
+    background-color: #18f736;
+    color: white;
+    font-size: 1.2rem;
+    border: none;
+    width: 2.5rem;
+    height: 2rem;
+}
+.filtroCuadra{
+    font-size: 1.2rem;
+}
+.areaBoton{
+    margin-left: 1rem;
+}
+.archivoExcel{
+    margin-left: 1.2rem;
+}
+.archivoExcel label{
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+.archivoExcel button{
+    background-color: #3b6e42;
+    color: white;
+    font-size: 1.2rem;
+    width: 2.5rem;
+    height: 2rem;
+    border:  none;
+}
+/*Cargando*/
+#loading-message {
+    display: none;
+    position: fixed;
+    font-size: 2rem;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(39, 34, 34, 0.3);
+}
+  
+.rueda {
+    border: 10px solid rgba(39, 34, 34, 0.3);
+    border-radius: 50%;
+    border-left-color: transparent;
+    margin-left: 2rem;
+    width: 80px;
+    height: 80px;
+    animation: giro 1s linear infinite;
+  }
+  
+  @keyframes giro {
+    0% {
+      transform: rotate(0deg);
+    }
+  
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  /*Para los reportes*/
+  .botonRepM{
+    color: white;
+    background-color: #18f736;
+    font-size: 1.2rem;
+    border: none;
+    margin-bottom: 1rem;
+    margin-left: -1rem;
+    height: 2.5rem;
+  }
+
+   /*Para los reportes*/
+   .botonRepT{
+    color: white;
+    background-color: #18f736;
+    font-size: 1.2rem;
+    border: none;
+    margin-bottom: 1rem;
+    margin-left: -1rem;
+    height: 2.5rem;
+  }
+
+  .resaltado {
+    font-weight: bold;
+  }
+  /*Ocultardatos tabla*/
+  .ocultar{
+    display: none;
+  }

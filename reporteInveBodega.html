@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="graficos.js">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="https://kit.fontawesome.com/2e06dcf08c.js" crossorigin="anonymous"></script>
+    <title>Reporte Inventario Rectima</title>
+</head>
+<body>
+    <main>
+        <section>
+           <!-- Barra Lateral -->
+           <nav class="sidebar">
+            <ul>
+                <li><a href="./principal.html">Inicio</a></li>
+                <li class="estiloM" onclick="toggleSubmenu('submenu1')">
+                    <span class="indicator" id="indicator-submenu1"><i class="fa-solid fa-angle-right"></i></span> Matriz
+                </li>
+                <ul class="submenu" id="submenu1">
+                    <li class="men2"><a href="./inventarioMatriz.html">Inventario</a></li>
+                    <li class="men2"><a href="./reporteInveMatriz.html">Reporte</a></li>
+                </ul>
+                <li class="estiloM" onclick="toggleSubmenu('submenu2')">
+                    <span class="indicator" id="indicator-submenu2"><i class="fa-solid fa-angle-right"></i></span> Bodega 2
+                </li>
+                <ul class="submenu" id="submenu2">
+                    <li class="men2"><a href="./inventarioBodega.html">Inventario</a></li>
+                    <li class="men2"><a href="./reporteInveBodega.html">Reporte</a></li>
+                </ul>
+                <li class="estiloM" onclick="toggleSubmenu('submenu3')">
+                    <span class="indicator" id="indicator-submenu3"><i class="fa-solid fa-angle-right"></i></span> Tecpro</li>
+                <ul class="submenu" id="submenu3">
+                    <li class="men2"><a href="./inventarioTecpro.html">Inventario</a></li>
+                    <li class="men2"><a href="./reporteInveTecpro.html">Reporte</a></li>
+                </ul>
+            </ul>
+            <p>Versión: <span id="version"></span></p>
+        </nav>
+        </section>
+        <section>
+                <!-- Barra de Navegación -->
+                <div class="navbar">
+                    <h2>Rectima Bodega 2</h2>
+                </div>
+        </section>
+        <section>
+            <div class="content">
+                <div class="titulo">
+                    <p>Reporte Stock</p>
+                </div>
+                <section class="formaBoton">
+                    <div class="areaBoton">
+                        <button class="botonRepM" id="btnResumenBodega">Generar reporte</button>
+                    </div>
+                    <div class="areaBoton">
+                        <button class="botonRepVer" onclick="openModal()">Ver Grupos</button>
+                    </div>
+                </section>
+                <div id="loading-message">
+                    <div class="contenedor-loader">
+                        <div class="rueda"></div>
+                    </div>
+                     <div>Cargando...</div>
+                </div>
+                <table id="tablaMatriz">
+                    <thead>
+                        <tr>
+                            <th>Familia de Conteo</th>
+                            <th>Total Familia</th>
+                            <th>Contado</th>
+                            <th>Cuadra</th>
+                            <th>%. Contado</th>
+                            <th>%. Cuadra</th>
+                        </tr>
+                    </thead>
+                    <tbody id="reporteBodega">
+                        <!-- Aquí se llenarán los datos -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+        <section>
+            <div class="content2">
+                <canvas id="graficoB" width="500" height="150"></canvas>
+            </div>
+        </section>
+    </main>
+     <!-- Incluir el archivo JavaScript externo -->
+     <script src="clienteReporte.js"></script>
+     <script src="version.js"></script>
+     
+      <!-- Modal -->
+    <div id="myModal" class="modal" onclick="closeModal()">
+        <div class="modal-contentB" onclick="event.stopPropagation();">
+            <!-- Contenido del modal -->
+            <span onclick="closeModal()" style="cursor: pointer; float: right;">&times;</span>
+            <div class="grid-item" id="estiloModal">GRUPO/INTEGRANTES <br> BODEGA 2</div>
+            <div class="grid-item" id="estiloModal"><br>GRUPO 8</div>
+            <div class="grid-itemP">
+                <li>Luis Cepeda</li>
+                <li>Christian Tamaquiza</li>
+                <li>Nelson Palomo</li>
+                <li>Karla Moreta</li>
+            </div>
+        </div>
+    </div>
+    <script>
+        // Función para abrir el modal
+        function openModal() {
+            document.getElementById('myModal').style.display = 'flex';
+        }
+    
+        // Función para cerrar el modal
+        function closeModal() {
+            document.getElementById('myModal').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
